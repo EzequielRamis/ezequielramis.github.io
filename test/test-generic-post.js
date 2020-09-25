@@ -15,12 +15,12 @@ const GA_ID = require("../_data/googleanalytics.js")();
 
 describe("check build output for a generic post", () => {
   describe("sample post", () => {
-    const POST_FILENAME = "_site/posts/firstpost/index.html";
+    const POST_FILENAME = "docs/posts/firstpost/index.html";
     const URL = metadata.url;
     const POST_URL = URL + "/posts/firstpost/";
 
     if (!existsSync(POST_FILENAME)) {
-      it("WARNING skipping tests because POST_FILENAME does not exist", () => {});
+      it("WARNING skipping tests because POST_FILENAME does not exist", () => { });
       return;
     }
 
@@ -103,7 +103,7 @@ describe("check build output for a generic post", () => {
       for (let b of buttons) {
         expect(
           (b.firstElementChild === null && b.textContent.trim()) ||
-            b.getAttribute("aria-label") != null
+          b.getAttribute("aria-label") != null
         ).to.be.true;
       }
     });

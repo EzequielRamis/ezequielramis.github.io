@@ -1,19 +1,18 @@
 {
-  "title": "Title of the website. Update me.",
-  "url": "https://update-me.com",
-  "domain": "update-me.com",
-  "description": "Description of the website. Update me.",
-  "genre": "Insert a schema.org genre",
+  "title": "Ezequiel Ramis",
+  "url": "https://ramis.ar",
+  "domain": "ramis.ar",
+  "description": "Sitio web personal de Ezequiel Ramis",
   "googleAnalyticsId": "GA ID. Update me",
   "feed": {
     "subtitle": "Subtitle. Update me.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://update-me.com"
+    "id": "https://ramis.ar"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://update-me.com/feed/feed.json"
+    "url": "https://ramis.ar/feed/feed.json"
   },
   "author": {
     "name": "Author Name. Update me.",

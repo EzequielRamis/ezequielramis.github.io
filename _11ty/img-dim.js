@@ -44,11 +44,11 @@ const processImage = async (img, outputPath) => {
     // resolve relative URL
     src =
       "/" +
-      path.relative("./_site/", path.resolve(path.dirname(outputPath), src));
+      path.relative("./docs/", path.resolve(path.dirname(outputPath), src));
   }
   let dimensions;
   try {
-    dimensions = await sizeOf("_site/" + src);
+    dimensions = await sizeOf("docs/" + src);
   } catch (e) {
     console.warn(e.message, src);
     return;
@@ -69,14 +69,14 @@ const processImage = async (img, outputPath) => {
     // ceiling 🤯.
     const containSize = `min(var(--main-width), ${
       dimensions.width
-    }px) min(calc(var(--main-width) * ${
+      }px) min(calc(var(--main-width) * ${
       dimensions.height / dimensions.width
-    }), ${dimensions.height}px)`;
+      }), ${dimensions.height}px)`;
     img.setAttribute(
       "style",
       `background-size:cover;` +
-        `contain-intrinsic-size: ${containSize};` +
-        `background-image:url("${await blurryPlaceholder(src)}")`
+      `contain-intrinsic-size: ${containSize};` +
+      `background-image:url("${await blurryPlaceholder(src)}")`
     );
     const doc = img.ownerDocument;
     const picture = doc.createElement("picture");
