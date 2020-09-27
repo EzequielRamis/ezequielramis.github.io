@@ -144,10 +144,33 @@
        url("/fonts/Inter-BlackItalic.woff") format("woff");
 }
 
-html {
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: var(--color-00);
+    --txt: var(--color-03);
+    --title: var(--color-13);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--color-03);
+    --txt: var(--color-00);
+    --title: var(--color-10);
+  }
+}
+
+body {
   font-family: "Inter";
+  background-color: var(--bg);
+  color: var(--txt);
+  margin: 0;
 }
 
 img {
   content-visibility: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title);
 }

@@ -26,7 +26,6 @@ const ampOptimizer = AmpOptimizer.create({
   imageBasePath: "./docs/",
   //verbose: true,
 });
-const PurgeCSS = require("purgecss").PurgeCSS;
 const csso = require("csso");
 
 /**
@@ -51,30 +50,7 @@ const purifyCss = async (rawContent, outputPath) => {
 
     before = before.replace(/@font-face {/g, "@font-face {font-display:swap;");
 
-    const purged = await new PurgeCSS().purge({
-      content: [
-        {
-          raw: rawContent,
-          extension: "html",
-        },
-      ],
-      css: [
-        {
-          raw: before,
-        },
-      ],
-      /*extractors: [
-        {
-          extractor: require("purge-from-html").extract,
-          extensions: ["html"],
-        },
-      ],*/
-      fontFace: true,
-      variables: true,
-    });
-
-    const after = csso.minify(purged[0].css).css;
-    //console.log("CSS reduction", before.length - after.length);
+    const after = csso.minify(before).css;
 
     content = content.replace("</head>", `<style>${after}</style></head>`);
   }
