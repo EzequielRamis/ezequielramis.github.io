@@ -15,16 +15,17 @@ Bring to the table win-win survival strategies to ensure proactive domination. A
 ![An image](https://cdn.pixabay.com/photo/2020/08/30/20/54/rice-field-5530707_1280.jpg)
 
 ## Section Header
+### Section Header
 
 Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
 
 ```rust
 // this is a command
-fn myCommand() {
+fn myCommand() -> bool {
 	let counter = 0;
-	counter+=1;
+	counter += 1;
 }
 
 // Test with a line break above this line.
-println!("{}", counter);
+println!("{:?}", counter);
 ```

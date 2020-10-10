@@ -8,6 +8,20 @@ layout: layouts/post.njk
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
+1. First item
+2. Second item
+3. Third item
+
+- First item
+- Second item
+- Third item
+
+`let var = 0`
+
+---
+
+~~The world is flat.~~
+
 ## Section Header
 
 <a href="{{ '/posts/firstpost/' | url }}">First post</a>

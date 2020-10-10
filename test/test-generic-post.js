@@ -73,11 +73,6 @@ describe("check build output for a generic post", () => {
       }
     });
 
-    it("should have a published date", () => {
-      expect(select("article time")).to.equal("01 May 2018");
-      expect(select("article time", "datetime")).to.equal("2018-05-01");
-    });
-
     it("should link to twitter with noopener", () => {
       const twitterLinks = Array.from(doc.querySelectorAll("a")).filter((a) =>
         a.href.startsWith("https://twitter.com")

@@ -1,24 +1,33 @@
 ---
 title: This is my third post.
 description: This is a post on My Blog about win-win survival strategies.
-date: 2018-08-24
+date: 2018-10-24
 tags:
   - second-tag
 layout: layouts/post.njk
 ---
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+**Leverage agile frameworks to provide a robust** synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. 
+> Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
-``` js/2/4
+``` rust/1-3/5
+use bevy::prelude::{GlobalTransform, Mat4, Quat, Transform};
+use std::f32::consts::SQRT_2;
+
+// Test with a line break above this line.
+pub trait NormalizedTransform {
+    fn rotate_normalized(&mut self, quat: Quat);
+    fn translate_normalized(&mut self);
+}
+```
+```rust
 // this is a command
-function myCommand() {
+fn myCommand() -> bool {
 	let counter = 0;
-
-	counter++;
-
+	counter += 1;
 }
 
 // Test with a line break above this line.
-console.log('Test');
+println!("{:?}", counter);
 ```
 
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
