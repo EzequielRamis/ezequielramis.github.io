@@ -64,7 +64,7 @@
 
     <main>
       <article>
-        {% if page.url.indexOf("/posts/") > -1 %}
+        {% if r/\/blog\/./g.test(page.url) %}
           <data><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></data>
         {% endif %}
         <h1>{{ title }}</h1>

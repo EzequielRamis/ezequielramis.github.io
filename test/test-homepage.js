@@ -31,11 +31,5 @@ describe("check build output for homepage", () => {
       dom = new JSDOM(html);
       doc = dom.window.document;
     });
-
-    it("should have a list of posts", () => {
-      const posts = Array.from(doc.querySelectorAll("#posts ul li a"));
-
-      expect(posts.length).to.be.greaterThan(0);
-    });
   });
 });
