@@ -96,8 +96,12 @@ module.exports = function (eleventyConfig) {
     return encodeURIComponent(str);
   });
 
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
+  eleventyConfig.addFilter("readableFullDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc", locale: "es-ar" }).toLocaleString(DateTime.DATE_FULL);
+  });
+
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc", locale: "es-ar" }).toLocaleString({ month: 'short', day: 'numeric' });
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

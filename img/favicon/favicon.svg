@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        path {
+            fill: #CC9352;
+        }
+    </style>
+    <path d="M16 16L8 8L16 0H0V16H16Z" transform="translate(4, 4)"/>
+</svg>
