@@ -1,0 +1,22 @@
+{% set postslist = postslist | reverse %}
+{% set lastYear = postslist[0].date.getFullYear() %}
+<section class="post-section">
+<h2>{{ lastYear }}</h2>
+<ul class="post-list">
+{% for post in postslist %}
+  {% set actualYear = post.date.getFullYear() %}
+  {% if actualYear != lastYear %}
+    {% set lastYear = actualYear %}
+    </ul>
+</section>
+<section class="post-section">
+    <h2>{{ lastYear }}</h2>
+    <ul class="post-list">
+  {% endif %}
+  <li>
+    <a href="{{ post.url | url }}">
+    {{ post.data.title }}
+    </a>
+    <data><time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></data>
+  </li>
+{% endfor %}

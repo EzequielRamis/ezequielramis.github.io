@@ -1,5 +1,4 @@
 ---
-title: Title. Update me.
 layout: layouts/home.njk
 description: Description. Update me.
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
@@ -11,8 +10,15 @@ date: Last Modified
   <a href="https://www.industrialempathy.com/posts/eleventy-high-performance-blog/">eleventy-high-performance-blog</a>.
 </p>
 
-<div id="blog">
-  <h2>Blog</h2>
-  {% set bloglist = collections.blog %}
-  {% include "bloglist.njk" %}
-</div>
+<h2>Última nota</h2>
+{% set postslist = collections.posts | reverse %}
+{% set post = postslist[0] %}
+<ul class="post-list">
+  <li>
+    <a href="{{ post.url | url }}">
+    {{ post.data.title }}
+    </a>
+    <data><time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></data>
+  </li>
+</ul>
+<p>Ver más <a href="/notas">notas</a>.</p>
