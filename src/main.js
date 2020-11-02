@@ -1,16 +1,20 @@
 const btn = document.querySelector("#theme-switcher");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const classList = document.body.classList;
+const DARK_MODE = "dark-mode";
+const LIGHT_MODE = "light-mode";
+const DARK = "dark";
+const LIGHT = "light";
 
 if (isNull()) {
     prefersDarkScheme.matches ? setDark() : setLight();
-    classList.toggle(prefersDarkScheme.matches ? "dark-mode" : "light-mode");
+    classList.toggle(prefersDarkScheme.matches ? DARK_MODE : LIGHT_MODE);
 }
 else if (isDark()) {
-    classList.add("dark-mode");
+    classList.add(DARK_MODE);
 }
 else if (isLight()) {
-    classList.add("light-mode");
+    classList.add(LIGHT_MODE);
 }
 
 btn.addEventListener("click", () => {
@@ -20,8 +24,8 @@ btn.addEventListener("click", () => {
     else if (isLight()) {
         setDark();
     }
-    classList.toggle("dark-mode");
-    classList.toggle("light-mode");
+    classList.toggle(DARK_MODE);
+    classList.toggle(LIGHT_MODE);
 });
 
 function getTheme() {
@@ -33,11 +37,11 @@ function setTheme(theme) {
 }
 
 function isDark() {
-    return getTheme() == "dark";
+    return getTheme() == DARK;
 }
 
 function isLight() {
-    return getTheme() == "light";
+    return getTheme() == LIGHT;
 }
 
 function isNull() {
@@ -45,9 +49,9 @@ function isNull() {
 }
 
 function setDark() {
-    setTheme("dark");
+    setTheme(DARK);
 }
 
 function setLight() {
-    setTheme("light");
+    setTheme(LIGHT);
 }

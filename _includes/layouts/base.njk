@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="{{ csp.regular | safe }}">
-    <link rel="icon" href="{{ '/img/favicon/favicon.svg' | addHash }}" sizes="any" type="image/svg+xml">
     <meta name="theme-color" content="#1A1714">
     {% if title %}
     <title>{{ title }} | {{ metadata.title }}</title>
@@ -32,7 +31,7 @@
          https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
           -->
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}" type="application/rss+xml" title="{{ metadata.title }}">
 
     <link rel="preconnect" href="/" crossorigin>
     <script async defer src="{{ "/js/min.js" | addHash }}"></script>
@@ -43,11 +42,12 @@
   </head>
   <body>
     <header>
-      <a href="/" title="Página de inicio">
-        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 16L8 8L16 0H0V16H16Z"/>
+      {# <a href="/" title="Página de inicio">
+        <svg width="18" height="18" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="1"/>
         </svg>
-      </a>
+        inicio
+      </a> #}
       <nav>
         <ul>
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
@@ -78,27 +78,27 @@
         <section>
           <h3>Sitio</h3>
           <ul>
-            <li>
-                <a href="/">inicio</a>
-            </li>
             {%- for entry in collections.all | eleventyNavigation %}
               <li>
                 <a href="{{ entry.url | url }}">{{ entry.title }}</a>
               </li>
             {%- endfor %}
+            <li>
+                <a target="_blank" href="{{metadata.feed.path}}">rss</a>
+            </li>
           </ul>
         </section>
         <section>
           <h3>Contacto</h3>
           <ul>
             <li>
-                <a target="_blank" href="https://github.com/ezequielramis">github</a>
+                <a target="_blank" href="{{metadata.author.github}}">github</a>
             </li>
             <li>
-                <a target="_blank" href="https://www.linkedin.com/in/ezequielramis/">linkedin</a>
+                <a target="_blank" href="{{metadata.author.linkedin}}">linkedin</a>
             </li>
             <li>
-                <a target="_blank" href="mailto:ezequiel@ramis.ar">ezequiel@ramis.ar</a>
+                <a target="_blank" href="mailto:{{metadata.author.email}}">{{metadata.author.email}}</a>
             </li>
           </ul>
         </section>

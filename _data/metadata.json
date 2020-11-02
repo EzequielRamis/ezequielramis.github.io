@@ -4,20 +4,13 @@
   "domain": "ramis.ar",
   "description": "Sitio web personal de Ezequiel Ramis",
   "feed": {
-    "subtitle": "Subtitle. Update me.",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://ramis.ar"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://ramis.ar/feed/feed.json"
+    "filename": "feed.rss",
+    "path": "/feed.rss"
   },
   "author": {
-    "name": "Author Name. Update me.",
-    "twitterHandle": "update_me"
-  },
-  "publisher": {
-    "name": "Publisher name. Update me."
+    "name": "Ezequiel Ramis",
+    "email": "ezequiel@ramis.ar",
+    "github": "https://github.com/ezequielramis",
+    "linkedin": "https://www.linkedin.com/in/ezequielramis"
   }
 }

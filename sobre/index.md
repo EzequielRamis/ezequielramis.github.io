@@ -4,7 +4,7 @@ title: Sobre mí
 templateClass: tmpl-post
 eleventyNavigation:
   key: sobre mí
-  order: 1
+  order: 2
 ---
 
 I am a person that writes stuff.

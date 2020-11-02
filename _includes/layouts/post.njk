@@ -12,19 +12,9 @@ templateClass: tmpl-post
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "{{ title }}",
-  "image": [],
   "author": "{{ metadata.author.name }}", 
-  "genre": "{{ metadata.genre }}", 
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ metadata.publisher.name }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ '/img/favicon/favicon.svg' | addHash }}"
-    }
-  },
   "url": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
   "mainEntityOfPage": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
   "datePublished": "{{ page.date | htmlDateString }}",
