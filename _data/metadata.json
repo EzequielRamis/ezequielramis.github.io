@@ -4,8 +4,8 @@
   "domain": "ramis.ar",
   "description": "Sitio web personal de Ezequiel Ramis",
   "feed": {
-    "filename": "feed.rss",
-    "path": "/feed.rss"
+    "filename": "feed.xml",
+    "path": "/feed.xml"
   },
   "author": {
     "name": "Ezequiel Ramis",

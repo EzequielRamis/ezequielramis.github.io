@@ -1,27 +1,30 @@
 ---
-permalink: feed.rss
+permalink: feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 	<title>{{ metadata.title }}</title>
-	<description>{{ metadata.description }}</description>
+	<subtitle>{{ metadata.description }}</subtitle>
 	{% set absoluteUrl %}{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
-	<link>{{ metadata.url }}</link>
-	<lastBuildDate>{{ collections.posts | rssLastUpdatedDate }}</lastBuildDate>
+	<link href="{{absoluteUrl}}" rel="self" />
+	<link href="{{ metadata.url }}"/>
+	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+	<author>
+		<name>{{ metadata.author.name }}</name>
+		<email>{{ metadata.author.email }}</email>
+ 	 </author>
 	<language>es-ar</language>
 	{%- for post in collections.posts %}
 	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-	<item>
+	<entry>
 		<title>{{ post.data.title }}</title>
-		<link>{{ absolutePostUrl }}</link>
-		<pubDate>{{ post.date | rssDate }}</pubDate>
-		<guid>{{ absolutePostUrl }}</guid>
-		<description type="html">
+		<link href="{{ absolutePostUrl }}"/>
+		<updated>{{ post.date | rssDate }}</updated>
+		<id>{{ absolutePostUrl }}</id>
+		<content type="html">
 		  {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
-		</description>
-	</item>
+		</content>
+	</entry>
 	{%- endfor %}
-</channel>
-</rss>
+</feed>

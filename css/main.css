@@ -265,6 +265,13 @@ code {
   line-height: 1.7;
 }
 
+p code {
+  background: var(--theme-01);
+  font-weight: 500;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+}
+
 @supports (font-variation-settings: normal) {
   code {
     font-family: 'Fira Code VF', monospace;
@@ -343,7 +350,7 @@ blockquote {
 }
 
 hr {
-  color: var(--theme-01);
+  border: 1px solid var(--theme-01);
 }
 
 header {
@@ -356,32 +363,26 @@ header ul {
   margin: 0;
   list-style-type: none;
   display: flex;
+  justify-content: flex-end;
 }
 
 header ul li {
   margin-left: 1em;
 }
 
-header ul li:first-child {
-  margin: 0;
-  flex: 1;
-}
-
 a {
   color: var(--theme-02);
-  text-decoration: none;
   font-weight: 500;
 }
 
-a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: currentColor;
+  font-weight: inherit;
 }
 
 footer {
   display: flex;
-  flex-wrap: wrap;
-  margin: 2em 1em;
+  padding: 0 1em;
   justify-content: center;
 }
 
@@ -390,6 +391,7 @@ footer nav {
   flex-wrap: wrap;
   width: 60ch;
   position: relative;
+  border-top: 2px solid var(--theme-01);
 }
 
 footer ul {
@@ -426,8 +428,7 @@ data {
 .post-list {
   padding: 0;
   margin: 0;
-  flex: 1;
-  min-width: 26ch;
+  flex-grow: 1;
 }
 
 .post-list li {
@@ -437,7 +438,7 @@ data {
 }
 
 .post-list data {
-  flex-shrink: 0;
+  flex-shrink: 0; 
   margin-left: 1em;
 }
 

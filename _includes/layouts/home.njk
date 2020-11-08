@@ -3,3 +3,16 @@ layout: layouts/base.njk
 templateClass: tmpl-home
 ---
 {{ content | safe }}
+
+<h2>Última nota</h2>
+{% set postslist = collections.posts | reverse %}
+{% set post = postslist[0] %}
+<ul class="post-list">
+  <li>
+    <a href="{{ post.url | url }}">
+    {{ post.data.title }}
+    </a>
+    <data><time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></data>
+  </li>
+</ul>
+<p>Ver más <a href="/notas">notas</a>.</p>
