@@ -7,6 +7,14 @@
   --color-11: #996E3D;
   --color-12: #664929;
   --color-13: #332514;
+  --color-20: #F2DCC240;
+  --color-21: #AA9A8840;
+  --color-22: #62594E40;
+  --color-23: #1A171440;
+  --color-30: #CC935240;
+  --color-31: #996E3D40;
+  --color-32: #66492940;
+  --color-33: #33251440;
 }
 
 @font-face {
@@ -170,6 +178,14 @@
     --theme-11: var(--color-11);
     --theme-12: var(--color-12);
     --theme-13: var(--color-13);
+    --theme-20: var(--color-20);
+    --theme-21: var(--color-21);
+    --theme-22: var(--color-22);
+    --theme-23: var(--color-23);
+    --theme-30: var(--color-30);
+    --theme-31: var(--color-31);
+    --theme-32: var(--color-32);
+    --theme-33: var(--color-33);
   }
 }
 
@@ -183,6 +199,14 @@
     --theme-11: var(--color-12);
     --theme-12: var(--color-11);
     --theme-13: var(--color-10);
+    --theme-20: var(--color-23);
+    --theme-21: var(--color-22);
+    --theme-22: var(--color-21);
+    --theme-23: var(--color-20);
+    --theme-30: var(--color-33);
+    --theme-31: var(--color-32);
+    --theme-32: var(--color-31);
+    --theme-33: var(--color-30);
   }
 }
 
@@ -195,6 +219,14 @@
   --theme-11: var(--color-11);
   --theme-12: var(--color-12);
   --theme-13: var(--color-13);
+  --theme-20: var(--color-20);
+  --theme-21: var(--color-21);
+  --theme-22: var(--color-22);
+  --theme-23: var(--color-23);
+  --theme-30: var(--color-30);
+  --theme-31: var(--color-31);
+  --theme-32: var(--color-32);
+  --theme-33: var(--color-33);
 }
 
 .dark-mode {
@@ -206,6 +238,14 @@
   --theme-11: var(--color-12);
   --theme-12: var(--color-11);
   --theme-13: var(--color-10);
+  --theme-20: var(--color-23);
+  --theme-21: var(--color-22);
+  --theme-22: var(--color-21);
+  --theme-23: var(--color-20);
+  --theme-30: var(--color-33);
+  --theme-31: var(--color-32);
+  --theme-32: var(--color-31);
+  --theme-33: var(--color-30);
 }
 
 .light-mode #theme-switcher .sun {
@@ -280,8 +320,7 @@ code {
 }
 
 p code {
-  background: var(--theme-01);
-  font-weight: 500;
+  background: var(--theme-21);
   padding: 0.2em 0.4em;
   border-radius: 0.2em;
 }
@@ -291,8 +330,7 @@ pre {
   overflow: auto;
   padding: 1.5em;
   box-sizing: border-box;
-  background: var(--theme-00);
-  border: 2px solid var(--theme-11);
+  background: var(--theme-21);
   border-radius: 0.5em;
   line-height: 1;
   letter-spacing: normal;
