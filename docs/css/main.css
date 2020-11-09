@@ -144,7 +144,21 @@
        url("/fonts/Inter-BlackItalic.woff") format("woff");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+@font-face {
+  font-family: 'Fira Code';
+  font-style:  normal;
+  font-weight: 400;
+  src: url("/fonts/FiraCode-Regular.woff2") format("woff2"),
+       url("/fonts/FiraCode-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style:  normal;
+  font-weight: 500;
+  src: url("/fonts/FiraCode-Medium.woff2") format("woff2"),
+       url("/fonts/FiraCode-Medium.woff") format("woff");
+}
 
 @media (prefers-color-scheme: light) {
   :root {
