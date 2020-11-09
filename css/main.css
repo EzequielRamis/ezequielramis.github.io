@@ -144,7 +144,7 @@
        url("/fonts/Inter-BlackItalic.woff") format("woff");
 }
 
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -270,12 +270,6 @@ p code {
   font-weight: 500;
   padding: 0.2em 0.4em;
   border-radius: 0.2em;
-}
-
-@supports (font-variation-settings: normal) {
-  code {
-    font-family: 'Fira Code VF', monospace;
-  }
 }
 
 pre {
